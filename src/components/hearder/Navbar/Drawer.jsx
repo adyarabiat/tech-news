@@ -1,22 +1,29 @@
 import React, { useState } from "react";
-import {
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-} from "@material-ui/core";
+import { Drawer, IconButton, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Menu } from "@material-ui/icons";
 
 const useStyles = makeStyles({
+  Buttons: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  Button: {
+    margin: "20px 20px",
+    border: "solid 1px #2BBBAD",
+    "&:hover": {
+      background: "#2BBBAD",
+      color: "#fff",
+    },
+  },
   list: {
     width: 250,
+    height: "100vh",
   },
   linkText: {
     textDecoration: `none`,
     textTransform: `uppercase`,
-    color: `black`,
+    color: `#010101`,
   },
 });
 
@@ -42,15 +49,14 @@ const SideDrawer = ({ navLinks }) => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List component="nav">
-        {navLinks.map(({ title, path }) => (
-          <a href={path} key={title} className={classes.linkText}>
-            <ListItem button>
-              <ListItemText primary={title} />
-            </ListItem>
-          </a>
-        ))}
-      </List>
+      <div className={classes.Buttons}>
+        <Button className={classes.Button}>COVID-19</Button>
+        <Button className={classes.Button}>EXPLORE</Button>
+        <Button className={classes.Button}>LATEST</Button>
+        <Button className={classes.Button}>REVIEWS</Button>
+        <Button className={classes.Button}>TECH</Button>
+        <Button className={classes.Button}>NEWS</Button>
+      </div>
     </div>
   );
 
@@ -61,7 +67,7 @@ const SideDrawer = ({ navLinks }) => {
         aria-label="menu"
         onClick={toggleDrawer("right", true)}
       >
-        <Menu fontSize="large" style={{ color: `white` }} />
+        <Menu fontSize="large" style={{ color: `#fff` }} />
       </IconButton>
 
       <Drawer

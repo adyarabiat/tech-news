@@ -29,21 +29,22 @@ export default makeStyles((theme) => ({
   },
   Buttons: {
     marginLeft: "10px",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
   Button: {
     color: "#fff",
-    margin: "10px",
-    border: "1px solid #2BBBAD",
+
+    padding: "13px",
+    // borderLeft: "1px solid #2BBBAD",
     "&:hover": {
       background: "#2BBBAD",
       color: "black",
     },
   },
   Mobile: {
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       display: "none",
     },
     color: "#FFF",

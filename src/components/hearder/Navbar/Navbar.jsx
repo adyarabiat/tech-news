@@ -58,11 +58,12 @@ const Navbar = (props) => {
   const classes = useStyles();
 
   const navLinks = [
-    { title: `about us`, path: `/about-us` },
-    { title: `product`, path: `/product` },
-    { title: `blog`, path: `/blog` },
-    { title: `contact`, path: `/contact` },
-    { title: `faq`, path: `/faq` },
+    { title: `COVID-19`, path: `/about-us` },
+    { title: `EXPLORE`, path: `/product` },
+    { title: `LATEST`, path: `/blog` },
+    { title: `REVIEWS`, path: `/contact` },
+    { title: `TECH`, path: `/faq` },
+    { title: `NEWS`, path: `/faq` },
   ];
 
   return (
@@ -74,16 +75,18 @@ const Navbar = (props) => {
             <p>TECH NEWS</p>
           </IconButton>
           <div className={classes.Buttons}>
-            <Button className={classes.Button}>Explore</Button>
-            <Button className={classes.Button}>Login</Button>
-            <Button className={classes.Button}>Login</Button>
-            <Button className={classes.Button}>Login</Button>
+            <Button className={classes.Button}>COVID-19</Button>
+            <Button className={classes.Button}>EXPLORE</Button>
+            <Button className={classes.Button}>LATEST</Button>
+            <Button className={classes.Button}>REVIEWS</Button>
+            <Button className={classes.Button}>TECH</Button>
+            <Button className={classes.Button}>NEWS</Button>
           </div>
           <IconButton className={classes.Mobile}>
             <SideDrawer navLinks={navLinks} />
           </IconButton>
         </Toolbar>
-        <Typography style={{ marginTop: "300px" }}>
+        <Typography style={{ marginTop: "300px", fontSize: "26px" }}>
           <q>It's not a faith in technology. It's faith in people.</q>
           <figcaption>
             &mdash; Steve Jobs, <cite>Co-founder of Apple</cite>
